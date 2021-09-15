@@ -1,0 +1,9 @@
+#+title: pdftotext.el
+#+author: tecosaur
+
+Sometimes it would be nice to treat a PDF as a text buffer, so you can do
+fancier searches etc. than =pdf-tools= would allow for. Other times, you may be
+limited to a terminal (e.g. Emacs over ssh), and want to peek at a PDF.
+
+In both cases, =pdftotext= can be rather helpful. This package just provides a
+mode that makes use of it. You'll also need =fmt= for line re-wrapping.
