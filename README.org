@@ -1,6 +1,9 @@
 #+title: pdftotext.el
 #+author: tecosaur
 
+#+html: <p><img src="https://img.shields.io/badge/Emacs-27.1+-blueviolet.svg?style=flat-square&logo=GNU%20Emacs&logoColor=white">
+#+html: <img src="https://img.shields.io/badge/stage-%CE%B2,%20refinement-orange?style=flat-square"></p>
+
 Sometimes it would be nice to treat a PDF as a text buffer, so you can do
 fancier searches etc. than =pdf-tools= would allow for. Other times, you may be
 limited to a terminal (e.g. Emacs over ssh), and want to peek at a PDF.
