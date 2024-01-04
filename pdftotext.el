@@ -111,6 +111,9 @@
   '("%PDF" . pdftotext-mode)
   "The entry to use for `magic-mode-alist'.")
 
+(defvar pdf-tools-auto-mode-alist-entry)
+(defvar pdf-tools-magic-mode-alist-entry)
+
 ;;;###autoload
 (defun pdftotext-install ()
   "Add a \".pdf\" associaton for all future buffers."
