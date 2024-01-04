@@ -104,11 +104,22 @@
     (re-search-forward (replace-regexp-in-string " +" "[ \n]+" (regexp-quote (plist-get pos :previous-line-content)))
                        (save-excursion (forward-paragraph 1) (point)))))
 
+(declare-function pdf-view-mode "pdf-view")
+
+(defun pdftotext--auto-mode ()
+  "Acts as `pdftotext-mode' when non-graphical, or a graphical viewer otherwise.
+
+The graphical viewer is `pdf-view-mode' when pdf-view is installed."
+  (cond
+   ((and (display-graphic-p) (require 'pdf-view nil t))
+    (pdf-view-mode))
+   (t (pdftotext-mode))))
+
 (defconst pdftotext-auto-mode-alist-entry
-  '("\\.[pP][dD][fF]\\'" . pdftotext-mode)
+  '("\\.[pP][dD][fF]\\'" . pdftotext--auto-mode)
   "The entry to use for `auto-mode-alist'.")
 (defconst pdftotext-magic-mode-alist-entry
-  '("%PDF" . pdftotext-mode)
+  '("%PDF" . pdftotext--auto-mode)
   "The entry to use for `magic-mode-alist'.")
 
 (defvar pdf-tools-auto-mode-alist-entry)
